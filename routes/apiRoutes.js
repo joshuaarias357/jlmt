@@ -17,7 +17,6 @@ module.exports = function(app) {
       travelguide: req.body.travelguide
     }).then(function(dbVoyager) {
       res.json(dbVoyager);
-    
     });
   });
 
