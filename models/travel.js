@@ -1,7 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Travel = sequelize.define("Travel", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+    name: DataTypes.STRING,
+    location: DataTypes.STRING,
+    language: DataTypes.STRING,
+    travelguide: DataTypes.BOOLEAN
   });
   return Travel;
 };
