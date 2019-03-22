@@ -3,21 +3,21 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Travel.findAll({}).then(function(dbVoyager) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: dbVoyager
       });
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
+    db.Travel.findOne({ where: { id: req.params.id } }).then(function(
+      dbVoyager
     ) {
       res.render("example", {
-        example: dbExample
+        example: dbVoyager
       });
     });
   });
