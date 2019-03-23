@@ -1,3 +1,6 @@
+var bcrypt = require("bcrypt");
+var saltRounds = 10;
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -8,15 +11,30 @@ module.exports = function(app) {
     });
   });
 
+  function hashPassword(password, cb) {
+    bcrypt.genSalt(saltRounds, function(err, salt) {
+      bcrypt.hash(password, salt, function(err, hash) {
+        cb(hash);
+      });
+    });
+  }
+
   // Create new traveler
   app.post("/api/voyager", function(req, res) {
-    db.Travel.create({
-      name: req.body.name,
-      location: req.body.location,
-      language: req.body.language,
-      travelguide: req.body.travelguide
-    }).then(function(dbVoyager) {
-      res.json(dbVoyager);
+    hashPassword(req.body.password, function(hashedPassword) {
+      db.Travel.create({
+        username: req.body.username,
+        password: hashedPassword,
+        name: req.body.name,
+        birthday: req.body.birthday,
+        location: req.body.location,
+        language: req.body.language,
+        travelguide: req.body.travelguide,
+        dates: req.body.dates,
+        special_requests: req.body.special_requests
+      }).then(function(dbVoyager) {
+        res.json(dbVoyager);
+      });
     });
   });
 
