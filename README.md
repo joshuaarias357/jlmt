@@ -1,4 +1,4 @@
-# Express App Starter [![Build Status](https://travis-ci.com/bburrier/express-ci-starter.svg?branch=master)](https://travis-ci.com/bburrier/express-ci-starter)
+# Express App Starter [![Build Status](https://travis-ci.com/joshuaarias357/jlmt.svg?branch=master)](https://travis-ci.com/joshuaarias357/jlmt)
 
 Simple Node/Express CRUD application and scaffolding to help students quickly get started with a new project, with tests and CI support.
 
