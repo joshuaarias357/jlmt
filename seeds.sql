@@ -11,4 +11,6 @@ VALUES ("traveler1", "password1", "Jane Doe", 01011980, "italy", "italian", true
 ("traveler7", "password7", "Homer Simpson", 11201960, "kenya", "english", true, 092020, "safari"), 
 ("traveler8", "password8", "Maggie Simpson", 05191990, "france", "english", true, 052020, "cooking class"), 
 ("traveler9", "password9", "Bob Belcher", 12071986, "australia", "french", false, 022020, "koalas"), 
-("traveler10", "password10", "Tina Belcher", 11071968, "japan", "english", true, 052021, "scuba diving")
+("traveler10", "password10", "Tina Belcher", 11071968, "japan", "english", true, 052021, "scuba diving");
+
+SELECT * FROM Travel;

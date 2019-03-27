@@ -9,9 +9,9 @@ module.exports = {
     dialect: "mysql"
   },
   test: {
-    username: "root",
-    password: "Password123",
-    database: "voyager_db",
+    username: process.env.MYSQL_TEST_USER,
+    password: process.env.MYSQL_TEST_PASS,
+    database: process.env.MYSQL_TEST_DB,
     host: "localhost",
     dialect: "mysql",
     logging: false
