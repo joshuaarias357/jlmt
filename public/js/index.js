@@ -1,24 +1,18 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveTraveler: function(example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/voyager",
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getAllTravelers: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/voyager",
       type: "GET"
     });
   },
@@ -64,9 +58,34 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var newVoyager = {
+    name: $("#name")
+      .val()
+      .trim(),
+    email: $("#emailaddress")
+      .val()
+      .trim(),
+    username: $("#username")
+      .val()
+      .trim(),
+    password: $("#Password")
+      .val()
+      .trim(),
+    birthday: $("#birthday")
+      .val()
+      .trim(),
+    location: $("#location")
+      .val()
+      .trim(),
+    travelGuide: $("#travelGuide")
+      .val()
+      .trim(),
+    time: $("#time")
+      .val()
+      .trim(),
+    specialRequests: $("#specialrequests")
+      .val()
+      .trim()
   };
 
   if (!(example.text && example.description)) {
@@ -74,12 +93,18 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.saveTraveler(newVoyager).then(function() {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $("#username").val("");
+  $("#password").val("");
+  $("#name").val("");
+  $("#birthday").val("");
+  $("#location").val("");
+  $("#specialrequests").val("");
+  $("#travelGuide").val("");
+  $("#time").val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -95,5 +120,5 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$("#submit").on("click", handleFormSubmit);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);
