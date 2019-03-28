@@ -1,3 +1,4 @@
 DROP DATABASE IF EXISTS voyager_db;
 CREATE DATABASE voyager_db;
 
+CREATE DATABASE test_db;
