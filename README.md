@@ -14,5 +14,11 @@ Travel website that matches individuals based on the information they provide!
 - Mocha + Chai
 - Travis CI
 
+## Team!
+- Josh Arias
+- Lisa Giroud
+- Tram Nguyen
+- Maggie Powell
+
 ## Heroku Deployment
 - https://afternoon-tundra-36598.herokuapp.com/
