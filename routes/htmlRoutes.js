@@ -11,6 +11,15 @@ module.exports = function(app) {
     });
   });
 
+  //
+  app.get("/survey", function(req, res) {
+    db.Travel.findAll({}).then(function(dbVoyager) {
+      res.render("survey", {
+        location: dbVoyager
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Travel.findOne({ where: { id: req.params.id } }).then(function(
