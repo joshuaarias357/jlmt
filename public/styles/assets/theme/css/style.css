@@ -5,6 +5,10 @@
 section {
   background-color: #eeeeee; }
 
+.survey {
+  margin-top: 200px;
+}
+
 section,
 .container,
 .container-fluid {
