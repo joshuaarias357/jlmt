@@ -4,7 +4,7 @@ Travel website that matches individuals based on the information they provide!
 
 ## Features
 - Answer a quick survey and be paired with people that match your criteria. Review other profiles and choose your adventure team!
-- Request special services such as tour guides, chauffer, photographer, etc.
+- Request special services such as tour guides, chauffeur, photographer, etc.
 - Plan your own trip or choose from one of our package deals.
 
 ## Technology Used
