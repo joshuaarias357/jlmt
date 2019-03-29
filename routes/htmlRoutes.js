@@ -11,7 +11,12 @@ module.exports = function(app) {
     });
   });
 
-  //
+  app.get("/aboutus", function(req, res) {
+    db.Travel.findAll({}).then(function() {
+      res.render("aboutus");
+    });
+  });
+
   app.get("/survey", function(req, res) {
     db.Travel.findAll({}).then(function(dbVoyager) {
       res.render("survey", {
