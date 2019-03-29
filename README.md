@@ -1,34 +1,18 @@
-# Express App Starter [![Build Status](https://travis-ci.com/bburrier/express-ci-starter.svg?branch=master)](https://travis-ci.com/bburrier/express-ci-starter)
+# Voyager - Never Travel Alone
 
-Simple Node/Express CRUD application and scaffolding to help students quickly get started with a new project, with tests and CI support.
+Travel website that matches individuals based on the information they provide!
 
+## Features
+- Answer a quick survey and be paired with people that match your criteria. Review other profiles and choose your adventure team!
+- Request special services such as tour guides, chauffer, photographer, etc.
+- Plan your own trip or choose from one of our package deals.
+
+## Technology Used
 - Node + Express
 - Sequelize
 - Handlebars
 - Mocha + Chai
 - Travis CI
 
-## Development Setup
-
-```
-# Install packages
-npm install
-
-# Initialize local database
-mysql < models/schema.sql
-
-# Create .env, update as needed
-cp .env.example .env
-
-# Run tests
-npm test
-
-# Start node application
-npm start
-```
-
 ## Heroku Deployment
-1. Create application [https://devcenter.heroku.com/articles/git](https://devcenter.heroku.com/articles/git)
-2. Add on JawsDB [https://devcenter.heroku.com/articles/jawsdb](https://devcenter.heroku.com/articles/jawsdb)
-
-
+- https://afternoon-tundra-36598.herokuapp.com/
