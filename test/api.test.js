@@ -1,7 +1,12 @@
 var chai = require("chai");
 var chaiHttp = require("chai-http");
 var server = require("../server");
+//Require db for testing
 var db = require("../models");
+
+//Require routes
+var routes = require("../routes");
+
 var expect = chai.expect;
 
 chai.use(chaiHttp);
@@ -76,3 +81,5 @@ describe("GET /api/voyager", function() {
     });
   });
 });
+
+describe("");
