@@ -1,8 +1,4 @@
 
-.survey {
- margin-top: 200px;
-}
-
 section {
   background-color: #eeeeee; }
 
@@ -74,6 +70,10 @@ section {
 
 .mbr-z-index20 {
   z-index: 20; }
+
+  .survey {
+    margin-top: 200px;
+   }
 
 /*! Base colors */
 .mbr-white {
