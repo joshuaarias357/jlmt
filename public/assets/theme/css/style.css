@@ -1,14 +1,10 @@
-/*!
- * Mobirise v4 theme (https://mobirise.com/)
- * Copyright 2017 Mobirise
- */
+
 section {
   background-color: #eeeeee; }
 
-.survey {
-  margin-top: 200px;
-}
-
+  #services {
+ margin-top: 200px;
+  }
 section,
 .container,
 .container-fluid {
@@ -77,6 +73,10 @@ section {
 
 .mbr-z-index20 {
   z-index: 20; }
+
+  .survey {
+    margin-top: 200px;
+   }
 
 /*! Base colors */
 .mbr-white {

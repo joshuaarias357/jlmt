@@ -11,7 +11,12 @@ module.exports = function(app) {
     });
   });
 
-  //
+  app.get("/aboutus", function(req, res) {
+    db.Travel.findAll({}).then(function() {
+      res.render("aboutus");
+    });
+  });
+
   app.get("/survey", function(req, res) {
     db.Travel.findAll({}).then(function(dbVoyager) {
       res.render("survey", {
@@ -20,6 +25,21 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/result", function(req, res) {
+    db.Travel.findAll({}).then(function(dbVoyager) {
+      res.render("result", {
+        location: dbVoyager
+      });
+    });
+  });
+
+  app.get("/services", function(req, res) {
+    db.Travel.findAll({}).then(function(dbVoyager) {
+      res.render("services", {
+        location: dbVoyager
+      });
+    });
+  });
   // Load example page and pass in an example by id
   app.get("/voyager/:location", function(req, res) {
     db.Travel.findAll({ where: { location: req.params.location } }).then(
