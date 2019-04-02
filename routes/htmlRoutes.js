@@ -26,9 +26,11 @@ module.exports = function(app) {
   });
 
   app.get("/result", function(req, res) {
-    db.Travel.findAll({}).then(function(dbVoyager) {
+    db.Travel.findAll({ where: { location: "France" } }).then(function(
+      dbVoyager
+    ) {
       res.render("result", {
-        location: dbVoyager
+        result: dbVoyager
       });
     });
   });
@@ -42,13 +44,14 @@ module.exports = function(app) {
   });
   // Load example page and pass in an example by id
   app.get("/voyager/:location", function(req, res) {
-    db.Travel.findAll({ where: { location: req.params.location } }).then(
-      function(dbVoyager) {
-        res.render("similiarVoyagers", {
-          example: dbVoyager
-        });
-      }
-    );
+    var guyLocation = req.params.location;
+    db.Travel.findAll({ where: { location: guyLocation } }).then(function(
+      dbVoyager
+    ) {
+      res.render("similiarVoyagers", {
+        example: dbVoyager
+      });
+    });
   });
 
   // Render 404 page for any unmatched routes
