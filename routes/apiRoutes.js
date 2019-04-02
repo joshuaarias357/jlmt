@@ -37,14 +37,4 @@ module.exports = function(app) {
       });
     });
   });
-
-  // Delete by id
-  // commenting this out for now because i dont think we will need to delete any travelers
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Travel.destroy({ where: { id: req.params.id } }).then(function(
-  //     dbExample
-  //   ) {
-  //     res.json(dbExample);
-  //   });
-  // });
 };
