@@ -5,7 +5,6 @@ var server = require("../server");
 var db = require("../models");
 
 //Require routes
-var routes = require("../routes");
 
 var expect = chai.expect;
 
