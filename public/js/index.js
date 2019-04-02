@@ -30,35 +30,6 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-// var refreshExamples = function() {
-//   API.getExamples().then(function(data) {
-//     var $examples = data.map(function(example) {
-//       var $a = $("<a>")
-//         .text(example.text)
-//         .attr("href", "/example/" + example.id);
-
-//       var $li = $("<li>")
-//         .attr({
-//           class: "list-group-item",
-//           "data-id": example.id
-//         })
-//         .append($a);
-
-//       var $button = $("<button>")
-//         .addClass("btn btn-danger float-right delete")
-//         .text("ｘ");
-
-//       $li.append($button);
-
-//       return $li;
-//     });
-
-//     $exampleList.empty();
-//     $exampleList.append($examples);
-//   });
-// };
-
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
@@ -94,7 +65,7 @@ var handleFormSubmit = function(event) {
       .trim()
   };
 
-  API.saveTraveler(newVoyager).then(function(savedVoyager) {
+  API.saveTraveler(newVoyager).then(function() {
     $("#username").val("");
     $("#password").val("");
     $("#name").val("");
@@ -103,10 +74,6 @@ var handleFormSubmit = function(event) {
     $("#specialrequests").val("");
     $("#travelGuide").val("");
     $("#time").val("");
-
-    window.location.replace(
-      window.location.hostname + "/voyager/" + savedVoyager.location
-    );
   });
 };
 
