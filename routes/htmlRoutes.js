@@ -41,14 +41,14 @@ module.exports = function(app) {
     });
   });
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Travel.findOne({ where: { id: req.params.id } }).then(function(
-      dbVoyager
-    ) {
-      res.render("example", {
-        example: dbVoyager
-      });
-    });
+  app.get("/voyager/:location", function(req, res) {
+    db.Travel.findAll({ where: { location: req.params.location } }).then(
+      function(dbVoyager) {
+        res.render("similiarVoyagers", {
+          example: dbVoyager
+        });
+      }
+    );
   });
 
   // Render 404 page for any unmatched routes
