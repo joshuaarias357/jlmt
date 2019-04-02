@@ -80,5 +80,3 @@ describe("GET /api/voyager", function() {
     });
   });
 });
-
-describe("");
