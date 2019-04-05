@@ -25,10 +25,13 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/result", function(req, res) {
-    db.Travel.findAll({ where: { location: "France" } }).then(function(
-      dbVoyager
-    ) {
+  app.get("/result/:location", function(req, res) {
+    //var theLocation = req.params.location;
+    db.Travel.findAll({
+      where: {
+        location: req.params.location
+      }
+    }).then(function(dbVoyager) {
       res.render("result", {
         result: dbVoyager
       });
@@ -39,17 +42,6 @@ module.exports = function(app) {
     db.Travel.findAll({}).then(function(dbVoyager) {
       res.render("services", {
         location: dbVoyager
-      });
-    });
-  });
-  // Load example page and pass in an example by id
-  app.get("/voyager/:location", function(req, res) {
-    var guyLocation = req.params.location;
-    db.Travel.findAll({ where: { location: guyLocation } }).then(function(
-      dbVoyager
-    ) {
-      res.render("similiarVoyagers", {
-        example: dbVoyager
       });
     });
   });
