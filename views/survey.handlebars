@@ -4,27 +4,27 @@
       <form action="/result">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       </div>
       <div class="form-group">
         <label for="emailaddress">Email address</label>
-        <input type="email" class="form-control" id="emailaddress" placeholder="Name@example.com">
+        <input type="email" class="form-control" id="emailaddress" name="email" placeholder="Name@example.com">
       </div>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" placeholder="Username">
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
       </div>
       <div class="form-group">
         <label for="Password">Password</label>
-        <input type="password" class="form-control" id="Password" placeholder="Password">
+        <input type="password" class="form-control" id="Password" name="password" placeholder="Password">
       </div>
       <div class="form-group">
         <label for="birthday">Birthday</label>
-        <input type="date" class="form-control" id="birthday" placeholder="name@example.com">
+        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="name@example.com">
       </div>
       <div class="form-group">
         <label for="location">Where would you like to travel?</label>
-        <select class="form-control" id="location">
+        <select class="form-control" id="location" name="location">
           <!--dynamically load these from table later-->
           <option></option>
           <option>Japan</option>
@@ -38,7 +38,7 @@
       </div>
       <div class="form-group">
         <label for="travelguide">Would you like a travel guide?</label>
-        <select class="form-control" id="travelguide">
+        <select class="form-control" id="travelguide" name="travelguide">
           <option></option>
           <option>Yes</option>
           <option>No</option>
@@ -46,7 +46,7 @@
       </div>
       <div class="form-group">
         <label for="time">When would you like to travel?</label>
-        <select class="form-control" id="time">
+        <select class="form-control" id="time" name="time">
           <option></option>
           <option>January</option>
           <option>February</option>
@@ -64,10 +64,10 @@
       </div>
       <div class="form-group">
         <label for="specialrequests">Do you have any special requests?</label>
-        <textarea class="form-control" id="specialrequests" rows="3"></textarea>
+        <textarea class="form-control" id="specialrequests" rows="3" name="specialrequests"></textarea>
       </div>
+      
       <input class="btn btn-primary btn-form display-4" type="submit" id="submit" value="Submit">
-
       </form>
 
     </div>
