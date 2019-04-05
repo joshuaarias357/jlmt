@@ -20,18 +20,19 @@ module.exports = function(app) {
   }
 
   // Create new traveler
-  app.post("/api/voyager", function(req, res) {
+  app.post("/api/voyager/", function(req, res) {
+    console.log(req.body);
     hashPassword(req.body.password, function(hashedPassword) {
       db.Travel.create({
-        name: req.body.name,
-        email: req.body.email,
         username: req.body.username,
         password: hashedPassword,
+        email: req.body.email,
+        name: req.body.name,
         birthday: req.body.birthday,
         location: req.body.location,
         travelguide: req.body.travelguide,
-        time: req.body.time,
-        specialrequests: req.body.specialrequests
+        dates: req.body.time,
+        special_requests: req.body.specialrequests
       }).then(function(dbVoyager) {
         res.json(dbVoyager);
       });

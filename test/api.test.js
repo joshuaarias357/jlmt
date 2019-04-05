@@ -60,20 +60,6 @@ describe("GET /api/voyager", function() {
           .to.be.an("array")
           .that.has.lengthOf(2);
 
-        // expect(responseBody[0])
-        //   .to.be.an("object")
-        //   .that.includes({
-        //     text: "First Example",
-        //     description: "First Description"
-        //   });
-
-        // expect(responseBody[1])
-        //   .to.be.an("object")
-        //   .that.includes({
-        //     text: "Second Example",
-        //     description: "Second Description"
-        //   });
-
         // The `done` function is used to end any asynchronous tests
         done();
       });

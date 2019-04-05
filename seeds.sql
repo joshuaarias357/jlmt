@@ -1,6 +1,6 @@
 USE voyager_db;
 
-INSERT INTO Travel (username, password, name, birthday, location, language, travelguide, dates, special_requests)
+INSERT INTO Travel (username, password, name, birthday, location, language, travelguide, dates, special_requests, createdAt, updatedAt)
 
 VALUES ("traveler1", "password1", "Jane Doe", 01011980, "italy", "italian", true, 052020, "vegetarian"), 
 ("traveler2", "password2", "John Doe", 01011970, "france", "french", false, 032020, "none"), 

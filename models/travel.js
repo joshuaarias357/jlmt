@@ -4,12 +4,12 @@ module.exports = function(sequelize, DataTypes) {
     {
       username: DataTypes.STRING,
       password: DataTypes.STRING,
+      email: DataTypes.STRING,
       name: DataTypes.STRING,
-      birthday: DataTypes.DATE,
+      birthday: DataTypes.STRING,
       location: DataTypes.STRING,
-      language: DataTypes.STRING,
-      travelguide: DataTypes.BOOLEAN,
-      dates: DataTypes.INTEGER,
+      travelguide: DataTypes.STRING,
+      dates: DataTypes.STRING,
       special_requests: DataTypes.TEXT
     },
     {
