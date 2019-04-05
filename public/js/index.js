@@ -6,7 +6,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/voyager",
+      url: "api/voyager/",
       data: JSON.stringify(example)
     });
   },
@@ -35,60 +35,33 @@ var API = {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
+  var usernameInput = $("#username").val();
+  var passwordInput = $("#Password").val();
+  var emailInput = $("#emailaddress").val();
+  var nameInput = $("#name").val();
+  var birthdayInput = $("#birthday").val();
+  var locationInput = $("#location").val();
+  var travelguideInput = $("#travelguide").val();
+  var datesInput = $("#time").val();
+  var specialrequestsInput = $("#specialrequests").val();
+
   var newVoyager = {
-    name: $("#name")
-      .val()
-      .trim(),
-    email: $("#emailaddress")
-      .val()
-      .trim(),
-    username: $("#username")
-      .val()
-      .trim(),
-    password: $("#Password")
-      .val()
-      .trim(),
-    birthday: $("#birthday")
-      .val()
-      .trim(),
-    location: $("#location")
-      .val()
-      .trim(),
-    travelGuide: $("#travelGuide")
-      .val()
-      .trim(),
-    time: $("#time")
-      .val()
-      .trim(),
-    specialRequests: $("#specialrequests")
-      .val()
-      .trim()
+    username: usernameInput,
+    password: passwordInput,
+    email: emailInput,
+    name: nameInput,
+    birthday: birthdayInput,
+    location: locationInput,
+    travelguide: travelguideInput,
+    dates: datesInput,
+    specialrequests: specialrequestsInput
   };
+  console.log(newVoyager);
 
   API.saveTraveler(newVoyager).then(function() {
-    $("#username").val("");
-    $("#password").val("");
-    $("#name").val("");
-    $("#birthday").val("");
-    $("#location").val("");
-    $("#specialrequests").val("");
-    $("#travelGuide").val("");
-    $("#time").val("");
+    window.location.href = "/result/" + newVoyager.location;
   });
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-// var handleDeleteBtnClick = function() {
-//   var idToDelete = $(this)
-//     .parent()
-//     .attr("data-id");
-
-//   API.deleteExample(idToDelete).then(function() {
-//     refreshExamples();
-//   });
-// };
-
 // Add event listeners to the submit and delete buttons
 $("#submit").on("click", handleFormSubmit);
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);
